@@ -12,12 +12,13 @@ jwt = JWTManager()
 # More extensions here...
 # ==================================================
 
-def create_app():
+def create_app(config_class=Config):
     # Initialize app
     app = Flask(__name__)
 
     # App config
-    app.config.from_object(Config)
+    app.config.from_object(config_class)
+    # print(app.config)
 
     # ==================================================
     # Register extensions to app
